@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="contenido_main">
+        <header class="barra_navegacion">
+            <nav>
+                <button type="button" class="generar_info">Generar informe</button>
+                <button type="button" class="generar_conteo">Conteo gráfico</button>
+            </nav>
+            
+
+            <button id="abrir_modal">Añadir trabajador</button>
+            <div id="modal" class="modal">
+                <div class="modal_contenido">
+                    <span id="cerrar_modal" class="cerrar">&times;</span>
+                    <h2>Ingrese los datos del trabajador</h2>
+                    <form id="form_trabajador">
+                        <input type="text" name="nombre" placeholder="Nombre" required>
+                        <input type="text" name="apellido" placeholder="Apellido" required>
+                        <input type="number" name="edad" placeholder="Edad" required>
+                        <input type="text" name="genero" placeholder="Género" required>
+                        <input type="number" name="peso" placeholder="Peso" required>
+                        <input type="number" name="estatura" placeholder="Estatura" required>
+                        <input type="text" name="alergias" placeholder="Alergias" required>
+                        <input type="text" name="motivo" placeholder="Motivo de intervención" required>
+                        <input type="text" name="sugerencias" placeholder="Sugerencias" required>
+                        <select name="estado" required>
+                            <option value="" disabled selected>Selecciona un estado</option>
+                            <option value="1">Intervenido</option>
+                            <option value="2">En proceso</option>
+                            <option value="3">Finalizado</option>
+                            <option value="4">No iniciado</option>
+                        </select>
+                        <button type="button" class="guardar_usuario">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+        </header>
+
+        <section class="contenedor_informacion">
+            <div class="informacion_trabajador">
+                <img class="no_user" src="imgdefuser.webp" alt="imagen del trabajador" srcset="">
+                <div class="datos_trabajador">
+                    
+                </div>
+            </div>
+
+            <div class="informacion_motivo">
+
+            </div>
+        </section>
+        <footer class="contenedor_estado">
+            <h4 class="estado_actual">Estado actual: Intervenido</h4>
+            <div class="contenedor_selector">
+
+                <select class="selector_estado" name="selector_estado">
+
+            </select>
+            <button type="button" class="enviar_estado">Enviar</button>
+        </div>
+        </footer>
+    </main>
+    
+    <aside class="listado_atencion">
+        <h1 class="titulo_atencion">ATENCIÓN</h1>
+        <ul class="lista_trabajadores">
+
+
+            <li>
+                <div class="card_info_trabajador">
+                </div>
+                <div class="estado"></div>
+            </li>
+        </ul>
+    </aside>
+    <script src="script.js"></script>
+        
+</body>
+</html>

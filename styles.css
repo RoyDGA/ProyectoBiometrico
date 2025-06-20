@@ -1,0 +1,355 @@
+:root{
+    --color-principal: #FFFFFF;
+    --color-secundario: #FFCFF6;
+    --color-terciario: #D9D9D9;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+.contenido_main{
+    width: 69vw;
+    height: 100vh;
+    position: relative;
+}
+
+.barra_navegacion{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    padding: 0 0.5rem;
+    border-bottom: 1px solid var(--color-terciario);
+
+    .crear_usuario{
+        font-size: medium;
+        background-color: var(--color-principal);
+        padding: 1.2rem;
+        border-radius: 0.5rem;
+        border: 4px solid var(--color-secundario);
+        cursor: pointer;
+
+        transition: background-color 0.2s ease;
+        &:hover{
+            background-color: var(--color-secundario);
+
+        }
+    }
+}
+
+.generar_info{
+    font-size: medium;
+    background-color: var(--color-principal);
+    padding: 1.2rem;
+    border-radius: 0.5rem;
+    border: 4px solid var(--color-secundario);
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+    &:hover{
+        background-color: var(--color-secundario);
+
+    }
+}
+
+.generar_conteo{
+    font-size: medium;
+    background-color: var(--color-principal);
+    padding: 1.2rem;
+    border-radius: 0.5rem;
+    border: 4px solid var(--color-secundario);
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+    &:hover{
+        background-color: var(--color-secundario);
+        
+    }
+}
+
+#abrir_modal {
+    font-size: medium;
+    background-color: var(--color-secundario);
+    padding: 1.2rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+    &:hover{
+        background-color: var(--color-secundario);
+        
+    }
+}
+
+.modal {
+    display: none; /* Oculta la modal por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal_contenido {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    min-width: 300px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.2);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        gap: 0.2rem;
+        button{
+            padding: 0.7rem 1.5rem;
+            margin-top: 1rem;
+            border: 0.3rem solid var(--color-secundario);
+            background-color: #fff;
+            border-radius: 0.4rem;
+            cursor: pointer;
+
+            &:hover{
+                background-color: var(--color-secundario);
+            }
+
+            
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    }
+}
+
+.cerrar {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: #888;
+    cursor: pointer;
+}
+
+.modal_contenido input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+}
+
+.modal_contenido button[type="submit"] {
+    padding: 0.7rem 1.5rem;
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    font-size: 1rem;
+
+
+}
+
+.contenedor_informacion{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 0 2rem;
+}
+
+.informacion_trabajador{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 2rem;    
+}
+
+.datos_trabajador{
+    display: flex;
+    flex-direction: column;
+}
+
+.datos_personales{
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding-top: 1rem;
+    gap: 1rem;
+}
+
+
+.no_user{
+    max-width: 8rem;
+    min-width: 1rem;
+    object-fit: contain;
+}
+
+.informacion_motivo { 
+    width: 100%;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    padding: 3.5rem;
+}
+
+.informacion_motivo h1 {
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.informacion_motivo p {
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.contenedor_estado{
+    background-color: var(--color-secundario);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    position: sticky;
+    bottom: 0;
+    padding: 0 1rem;
+}
+
+.enviar_estado{
+    font-size: medium;
+    background-color: var(--color-principal);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    border: 4px solid var(--color-secundario);
+    cursor: pointer;
+
+    transition: border 0.2s ease;
+    transition: background-color 0.2s ease;
+    &:hover{
+        background-color: var(--color-secundario);
+        border: 4px solid var(--color-principal);
+
+
+    }
+}
+
+.selector_estado {
+    background-color: var(--color-principal);
+    font-size: medium;
+    padding: 0.99rem 2rem;
+    border-radius: 0.3rem;
+    border: none;
+    cursor: pointer;
+}
+
+.listado_atencion {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30vw;
+    z-index: 2;
+    height: 100vh;
+    background-color: var(--color-terciario);
+    overflow-y: scroll;
+}
+
+
+.titulo_atencion{
+    padding: 1.5rem 1rem;
+}
+
+
+.lista_trabajadores{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+
+    & li{
+        max-width: 24rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--color-principal);
+        padding: 0.5rem;
+        border-radius: 0.3rem;
+
+        &:active {
+        border: 1px solid rgb(0, 0, 0);
+    }
+    }
+}
+
+.card_info_trabajador {
+    height: 100%;
+    width: 80%;
+    white-space: nowrap;         
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: gray;
+    cursor: pointer;
+
+    &:hover {
+        color: black;
+    }
+
+}
+
+.card_info_trabajador p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    max-width: 100%;
+}
+
+.estado{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: var(--color-secundario);
+}
+
+.lista_trabajadores li.seleccionado {
+    border: 2px solid black;
+}
+.card_info_trabajador.seleccionado {
+    color: black !important;
+}
+.card_info_trabajador.seleccionado h3,
+.card_info_trabajador.seleccionado p {
+    color: black !important;
+}
+
+#form_trabajador select{
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+}
