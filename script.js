@@ -81,6 +81,7 @@ let usuarios = [];
 usuarios.push({
     nombre: 'Karen Dayana',
     apellido: 'Espejo Mercado',
+    cargo: 'Ingeniera de Sistemas',
     edad: '40',
     genero: 'F',
     peso: '60',
@@ -97,6 +98,7 @@ btnEnviar.addEventListener('click', () => {
     const nuevoUsuario = {
         nombre: form.nombre.value,
         apellido: form.apellido.value,
+        cargo: form.cargo.value,
         edad: form.edad.value,
         genero: form.genero.value,
         peso: form.peso.value,
@@ -169,10 +171,11 @@ function mostrarInformacionUsuario(usuario) {
         datosTrabajador.innerHTML = `
             <h1>${usuario.nombre} ${usuario.apellido}</h1>
             <div class="datos_personales">
-                <li>Edad: ${usuario.edad}</li>
-                <li>Genero: ${usuario.genero}</li>
-                <li>Peso: ${usuario.peso}kg</li>
-                <li>Estatura: ${usuario.estatura}</li>
+                <li><span>Edad:</span> ${usuario.edad}</li>
+                <li><span>Cargo:</span> ${usuario.cargo}</li>
+                <li><span>Genero:</span> ${usuario.genero}</li>
+                <li><span>Peso:</span> ${usuario.peso}kg</li>
+                <li><span>Estatura:</span> ${usuario.estatura}</li>
             </div>
         `;
     }
@@ -182,15 +185,15 @@ function mostrarInformacionUsuario(usuario) {
     if (infoMotivo) {
         infoMotivo.innerHTML = `
             <article>
-                <h1>Alergias</h1>
+                <h1>Patologías</h1>
                 <p>${usuario.alergias}</p>
             </article>
             <article>
-                <h1>Motivo</h1>
+                <h1>Descripción de la alerta</h1>
                 <p>${usuario.motivo}</p>
             </article>
             <article>
-                <h1>Sugerencias</h1>
+                <h1>Medidas de intervención</h1>
                 <p>${usuario.sugerencias}</p>
             </article>
         `;
